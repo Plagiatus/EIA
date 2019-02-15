@@ -4,6 +4,8 @@
 _Diese Aufgaben werden nicht geprüft und müssen auch nicht abegeben werden!_  
 _Bei Fragen, Unklarheiten, Fehlern oder Problemen wendet euch gerne an Lukas._
 
+Aufgaben teilweise inspiriert von oder nur leicht verändert übernommen von Prof. Dr. F. Kaspar der Fakultät Informatik der HFU.
+
 ## [Lösungen](https://github.com/Plagiatus/EIA/blob/master/Lösungen.md)
 
 Symbol | Bedeutung
@@ -16,6 +18,9 @@ nichts | Standard Aufgabe. Sollte gut lösbar sein.
 :information_source: | Weiterführende Informationen zu einem Thema oder einer Aufgabe.
 :warning: | Wichtige Hinweise
 
+
+> :information_source: Fast alle dieser Aufgaben sollten ohne oder nur mit minimalem Nutzerinput funktionieren. Sofern nicht explizit angegeben, sollten die Funktionen automatisch ablaufen und **nicht** über Buttons o.ä. aufgerufen werden.  
+In der zugehörigen HTML Datei sollte nur das Minimum einer HTML5 Datei sowie die Einbindung der Javascript Datei(en) vorhanden sein. Darum empfehle ich auch, für jede Aufgabe eigene Dateien anzulegen und nicht zu versuchen das alles in eine Datei zu quetschen.
 
 
 ## Aufgabe 1 :wrench:
@@ -38,7 +43,7 @@ namespace A1 {
 ```
 
 ### 1.1
-Bringe das obige Programm zum Laufen und experimentiere mit den Namen der Variablen und Funktionen. Welche Variablennamen sind nicht zulässig, welche sind zulässig?
+Bringe das obige Programm zum Laufen und experimentiere mit den Namen der Variablen und Funktionen. Welche Variablennamen sind nicht zulässig, welche sind zulässig?  
 
 ### 1.2
 Öffnet im Browser den Debugger (neben der Konsole) und setzt einen Breakpoint in Zeile 3. Ladet dann die Seite neu und geht Schritt für Schritt durch den Code durch, die Schaltflächen dafür sind normalerweise rechts am Rand:  
@@ -80,11 +85,44 @@ Baue in den Code von 1 und 1.4 Fehler ein und studiere die Fehlermeldungen. Läs
 > :warning: **Es sollte immer der erste Fehler in der Datei repariert werden, da in vielen Fällen die nachfolgenden Fehler aus den früheren Fehlern resultieren!**
 
 #### 1.5.2
-Tut euch mit einem Komilitonen zusammen und versucht die Fehler die der andere eingebaut hat zu finden.
-1.) Durch Codeinspektion: Versucht durch Lesen die Fehler zu finden.
-2.) Durch Fehlermeldungen: Schaut euch die Fehler in VSCode an und versucht diese zu verstehen.
-3.) Durch Auskommentieren und Debugger: Wenn das Programm sich übersetzen lässt aber nicht das richtige Verhalten aufweist, kommentiert nach und nach Codeschnipsel aus und wieder ein, bis ihr den Auslöser gefunden habt.
-4.) Wenn das alles nicht hilft, vergleicht mit dem vorgegebenen Code und findet die Fehler
+Tut euch mit einem Komilitonen zusammen und versucht die Fehler die der andere eingebaut hat zu finden.  
+1.) Durch Codeinspektion: Versucht durch Lesen die Fehler zu finden.  
+2.) Durch Fehlermeldungen: Schaut euch die Fehler in VSCode an und versucht diese zu verstehen.  
+3.) Durch Auskommentieren und Debugger: Wenn das Programm sich übersetzen lässt aber nicht das richtige Verhalten aufweist, kommentiert nach und nach Codeschnipsel aus und wieder ein, bis ihr den Auslöser gefunden habt.  
+4.) Wenn das alles nicht hilft, vergleicht mit dem vorgegebenen Code und findet die Fehler  
 
-## Aufgabe 2 :star:
+## Aufgabe 2 :wrench:
+
+### 2.1 
+Welche elementaren Datentypen sind dir bekannt? Welche Werte können diese speichern?
+
+### 2.2
+Was erlaubt es dem Typescript Entwickler, seine eigenen, komplexen Datentypen zu definieren?
+
+> :information_source: Eigene Typen sollten immer sinnvolle Bezeichnungen haben. Beschreibt euer Typ eine einzelnes Haus? Dann sollte der Typ auch "Haus" und nicht "Häuser" heißen. Grundsätzlich legen wir ja einen "Bauplan" für ein einzelnes Objekt an, und erschaffen dann mehrere dieser einzelnen Objekte.
+
+### 2.3
+Stelle dir vor du willst ein System für die Hochschule entwickeln, um alle Studenten abzuspeichern und zu verwalten.
+
+#### 2.3.1
+Definiere einen komplexen Datentyp für einen solchen Studenten. Wie könnte dieser Aussehen, welche Eigenschaften sollte dieser haben?
+
+#### 2.3.2 
+Erschaffe drei verschiedene Studenten, fülle sie mit sinnvollen Werten und speichere diese in variablen ab.
+
+#### 2.3.3
+Packe diese Variablen in ein Array von Studenten _(Typisierung!)_. Außerdem, gebe auf der Konsole einige Eigenschaften der Studenten aus.
+
+#### 2.3.4 
+Schreibe eine Funktion `showInfo(...)` mit geeigneten Übergabeparametern, welche wichtige Infos über einen Studenten auf der Konsole ausgibt (z.B: "Max Mustermann, Matrikelnummer: 123456, Studiengang: MUM, ....").
+
+Rufe diese Funktion einmal für jeden Studenten auf.
+
+
+## Aufgabe X
+
+### 2.1
+Schreibe ein Funktion mit der Signatur `add(a: number, b: number): number` welche die zwei übergebenen Zahlen a und b zusammenzählt und das Ergebnis zurück gibt.
+
+### 2.2 
 

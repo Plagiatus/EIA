@@ -121,24 +121,70 @@ Rufe diese Funktion einmal für jeden Studenten auf.
 
 ## Aufgabe 3
 
-### 3.1
+### 3.1 Komisches Verhalten ist Komisch
 ```typescript
-
+console.log(true+true);
+console.log(5+1);
+console.log(5+'1');
+console.log('5'+1);
+console.log('5'-1);
 ```
 
 Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme.
 
-### 3.2
+### 3.2 Lokal vs Global
 ```typescript
+let x: string = "Hallo";
+console.log(x);
+func1(x);
+func2();
+func3();
 
+function func1(y: string){
+    y = "Bla";
+    console.log(y);
+}
+
+function func2(){
+    let x: string = "Blubb";
+    console.log(x);
+}
+
+function func3(){
+    x = "Test";
+    console.log(x);
+}
 ```
 
 Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme. 
 
+### 3.3
+Erkläre den Unterschied zwischen globalen Variablen, lokalen Variablen und Übergabeparametern.  
+Inwiefern unterscheiden sich diese von Funktionen?
+
 ## Aufgabe 4
 
-### 2.1
+### 4.1
 Schreibe ein Funktion mit der Signatur `add(a: number, b: number): number` welche die zwei übergebenen Zahlen a und b zusammenzählt und das Ergebnis zurück gibt.
 
-### 2.2 
+Bringe anschließend den folgenden code zum laufen.
 
+```typescript
+console.log(add(5,3));
+let a: number = 17;
+let b: number = 25;
+let c: number = add(a,b);
+console.log(c);
+```
+
+### 4.2 
+
+## Aufgabe X :star2:
+
+Bei diesen Aufgaben geht es um Arraymanipulation. Für jede Unteraufgabe soll eine eigene Funktion erstellt werden welche die zu verarbeitenden Arrays als Parameter entgegen nimmt, verarbeitet und das Ergebis zurück gibt. _Die meisten dieser Aufgaben/Funktionen sind in der generischen Array Klasse bereits implementiert. Diese eingebauten Funktionen sollen hier gerade NICHT verwendet, sondern selbst geschrieben werden.
+
+### X.1
+Eine Funktion `backwards(...)`, welche ein Array entgegen nimmt und rückwärts zurück gibt.
+
+### X.2  
+Eine Funktion `join(...)` die zwei Arrays zusammenfügt, indem es das zweite hinter das erste hängt.

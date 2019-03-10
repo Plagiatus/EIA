@@ -119,7 +119,23 @@ Schreibe eine Funktion `showInfo(...)` mit geeigneten Übergabeparametern, welch
 Rufe diese Funktion einmal für jeden Studenten auf.
 
 
-## Aufgabe X
+## Aufgabe 3
+
+### 3.1
+```typescript
+
+```
+
+Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme.
+
+### 3.2
+```typescript
+
+```
+
+Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme. 
+
+## Aufgabe 4
 
 ### 2.1
 Schreibe ein Funktion mit der Signatur `add(a: number, b: number): number` welche die zwei übergebenen Zahlen a und b zusammenzählt und das Ergebnis zurück gibt.

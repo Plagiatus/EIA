@@ -26,6 +26,8 @@ nichts | Standard Aufgabe. Sollte gut lösbar sein.
 > :information_source: Fast alle dieser Aufgaben sollten ohne oder nur mit minimalem Nutzerinput funktionieren. Sofern nicht explizit angegeben, sollten die Funktionen automatisch ablaufen und **nicht** über Buttons o.ä. aufgerufen werden.  
 In der zugehörigen HTML Datei sollte nur das Minimum einer HTML5 Datei sowie die Einbindung der Javascript Datei(en) vorhanden sein. Darum empfehle ich auch, für jede Aufgabe eigene Dateien anzulegen und nicht zu versuchen das alles in eine Datei zu quetschen.
 
+> :warning: Versucht so viel es geht mit Übergabeparametern zu arbeiten und diese auch zu nutzen. **Greift nicht in euren Funktionen auf die globalen Variablen zu, wenn ihr eine lokale Variable habt mit der ihr arbeiten könnt!**
+
 
 ## Aufgabe 1 :wrench:
 

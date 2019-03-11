@@ -198,7 +198,7 @@ Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bring
 ## Aufgabe 3 :wrench: Kontrollstrukturen
 
 ### 3.1
-Ist der Ausdruck `((!a OR b) AND c) OR ((!b OR c) AND a))` true oder false für `a=true`, `b=true` und `c=false`? Schreibe ein Programm, um die Frage zu beantworten.
+Ist der Ausdruck `((NOT a OR b) AND c) OR ((NOT b OR c) AND a)` true oder false für `a=true`, `b=true` und `c=false`? Schreibe ein Programm, um die Frage zu beantworten.
 _Hinweis: Verwende boolesche Variablen und die logischen Operatoren `&&` für AND, `!` für NOT und `||` für OR._
 
 ### 3.2

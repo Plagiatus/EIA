@@ -4,6 +4,10 @@
 _Diese Aufgaben werden nicht geprüft und müssen auch nicht abegeben werden!_  
 _Bei Fragen, Unklarheiten, Fehlern oder Problemen wendet euch gerne an Lukas._
 
+Die :information_source: Blöcke sind nicht nur für die Aufgabe interessant.
+
+Die Aufgaben sind nur bedingt sortiert. Solltet ihr also bei einer Aufgabe nicht weiter kommen, versucht es mit der nächsten. Auch Teilaufgaben haben nicht immer etwas miteinander zu tun.
+
 Aufgaben teilweise inspiriert von oder nur leicht verändert übernommen von Prof. Dr. F. Kaspar der Fakultät Informatik der HFU.
 
 ## [Lösungen](https://github.com/Plagiatus/EIA/blob/master/Lösungen.md)
@@ -91,9 +95,9 @@ Tut euch mit einem Komilitonen zusammen und versucht die Fehler die der andere e
 3.) Durch Auskommentieren und Debugger: Wenn das Programm sich übersetzen lässt aber nicht das richtige Verhalten aufweist, kommentiert nach und nach Codeschnipsel aus und wieder ein, bis ihr den Auslöser gefunden habt.  
 4.) Wenn das alles nicht hilft, vergleicht mit dem vorgegebenen Code und findet die Fehler  
     
-## Aufgabe 3
+## Aufgabe 2
 
-### 3.1 Komisches Verhalten ist Komisch
+### 2.1 Komisches Verhalten ist Komisch
 ```typescript
 console.log(true+true);
 console.log(5+1);
@@ -102,9 +106,11 @@ console.log('5'+1);
 console.log('5'-1);
 ```
 
-Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme.
+Betrachte den obigen Code. Gibt es Fehler? Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme (eventuelle Fehler auskommentieren).
 
-### 3.2 Lokal vs Global
+> :information_source: Bei einigen dieser Anweisungen sollte der Compiler Fehler ausgeben und euch den Code nicht übersetzen. Zum Glück, denn diese Anweisungen sind alle legitim in Javascript und führen zu den komischsten Ergebnissen. Typescript versucht uns vor solchen Dingen zu schützen.
+
+### 2.2 Lokal vs Global
 ```typescript
 let x: string = "Hallo";
 console.log(x);
@@ -130,11 +136,11 @@ function func3(): void{
 
 Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme. 
 
-### 3.3
+### 2.3
 Erkläre den Unterschied zwischen globalen Variablen, lokalen Variablen und Übergabeparametern.  
 Inwiefern unterscheiden sich diese von Funktionen?
 
-### 3.4
+### 2.4
 ```typescript
 let zahl: number = 3;
 
@@ -159,7 +165,7 @@ function f2(): void {
 
 Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme.
 
-### 3.5
+### 2.5
 ```typescript
 let i: number;
 let resultat: number;
@@ -186,70 +192,70 @@ for(i=1; i < 11; i = i + 2) {
 
 Betrachte den obigen Code. Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme.
 
-## Aufgabe X :wrench: Kontrollstrukturen
+## Aufgabe 3 :wrench: Kontrollstrukturen
 
-### X.1
-Ist der Ausdruck `((!a OR b) AND c) OR ((!b OR c) AND a))` true oder false für `a=true`, `b=true` und `c=false`? Schreiben Sie ein Programm, um die Frage zu beantworten.
-_Hinweis: Verwenden Sie boolesche Variablen und die logischen Operatoren `&&` für AND, `!` für NOT und `||` für OR._
+### 3.1
+Ist der Ausdruck `((!a OR b) AND c) OR ((!b OR c) AND a))` true oder false für `a=true`, `b=true` und `c=false`? Schreibe ein Programm, um die Frage zu beantworten.
+_Hinweis: Verwende boolesche Variablen und die logischen Operatoren `&&` für AND, `!` für NOT und `||` für OR._
 
-### X.2
+### 3.2
 Berechne mithilfe einer while Schleife alle ganzen Zahlen von 1 bis 100 und gib das Ergebnis auf der Konsole aus.
 
-### X.3
+### 3.3
 Berechne mithilfe einer do-while Schleife den Wert von 8! (Fakultät, 0! = 1, 1!=1, 2!=1\*2, ..., 8! = 1\*2\*3\*4\*5\*6\*7\*8) und gib das Ergebnis auf der Konsole aus.
 
-### X.4
+### 3.4
 Gebe mithilfe einer for Schleife die ersten 20 Zahlen der Fibonacci Reihe aus (0, 1, 1, 2, 3, 5, 8, 13, ...)
 
-### X.5
+### 3.5
 Nutze eine beliebige Schleife um 10 [zufällige](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/math.random) Ganzzahlen auf der Konsole auszugeben.
 
-### X.6 :star:
+### 3.6 :star:
 Schreibe eine Funktion, welche alle Primzahlen zwischen einem Minimum und einem Maximum ermittelt und auf der Konsole ausgibt. Wie hast du die Funktion getestet?
 
-### X.7
+### 3.7
 Schreibe ein Programm, welches alle Schaltjahre von 1900 bis heute ausgibt. Ein Jahr ist ein Schaltjahr, wenn die Jahreszahl durch 4, aber nicht durch 100 teilbar ist. Sollte die Jahreszahl durch 400 teilbar sein, handelt es sich dennoch um ein Schaltjahr.
 
-### X.8
+### 3.8 :star:
 Schreibe ein Programm, das folgende Aufgabe löst:
 
-Auf einer Wiese hütet die Liesel ihre Gänse und anderes Kleinvieh. Der Lehrer der gerade vorbeikommt fragt Liesel nach der Anzahl ihrer Tiere. Liesel antwortet: "Ich hüte doppelt so viele Gänse wie Hühner, aber dreimal so viele Kaninchen wie Schafe. Insgesamt haben meine Tiere 90 Beine." Wie viele Tiere in welcher Gattung hütet Liesel? (Hinweis: jedes Tier hat mindestens 2 Beine, also gibt es insgesamt nicht mehr als 45 Tiere, also nicht mehr als 45 Tiere von jeder Art. Also nicht denken, sondern durchprobieren: 0, 1, ..., 45 Gänse, ... und Nebenbedingung prüfen.
+Auf einer Wiese hütet die Liesel ihre Gänse und anderes Kleinvieh. Der Lehrer der gerade vorbeikommt fragt Liesel nach der Anzahl ihrer Tiere. Liesel antwortet: "Ich hüte doppelt so viele Gänse wie Hühner, aber dreimal so viele Kaninchen wie Schafe. Insgesamt haben meine Tiere 90 Beine." Wie viele Tiere in welcher Gattung hütet Liesel? _(Hinweis: jedes Tier hat mindestens 2 Beine, also gibt es insgesamt nicht mehr als 45 Tiere, also nicht mehr als 45 Tiere von jeder Art. Also nicht denken, sondern durchprobieren: 0, 1, ..., 45 Gänse, ... und Nebenbedingung prüfen.)_
 
-### X.9
-Schreibe eine Funktion, die die Rückgabe von Wechselgeld nach einem Kauf bestimmt. Sie soll zwei Zahlen entgegennehmen: den Kaufbetrag und den vom Kunden dem Kassierer gegebenen Betrag. Die Funktion soll das Wechselgeld berechnen und dabei soll eine möglichst geringe Anzahl von Banknoten und Münzen zurückgegeben werden. Gehen von der Euro-Stückelung aus (1 Cent, 2 Cent, 5 Cent, 10 Cent, ...500 €). Prüfe, ob der Kaufbetrag nicht größer ist als der gegebene Betrag. Gebe die ermittelte Stückelung des Wechselgelds auf der Konsole aus.
+### 3.9 :star:
+Schreibe eine Funktion, die die Rückgabe von Wechselgeld nach einem Kauf bestimmt. Sie soll zwei Zahlen entgegennehmen: den Kaufbetrag und den vom Kunden dem Kassierer gegebenen Betrag. Die Funktion soll das Wechselgeld berechnen und dabei soll eine möglichst geringe Anzahl von Banknoten und Münzen zurückgegeben werden. Gehe von der Euro-Stückelung aus (1 Cent, 2 Cent, 5 Cent, 10 Cent, ...500 €). Prüfe, ob der Kaufbetrag nicht größer ist als der gegebene Betrag. Gebe die ermittelte Stückelung des Wechselgelds auf der Konsole aus.
 
-## Aufgabe 2 :wrench:
+## Aufgabe 4 :wrench:
 
-### 2.1 
+### 4.1 
 Welche elementaren Datentypen sind dir bekannt? Welche Werte können diese speichern?  
 Schreibe ein Programm welches je eine Variable für jeden Basisdatentyp deklariert, initialisiert und auf der Konsole ausgibt.
 
-### 2.2
+### 4.2
 Was erlaubt es dem Typescript Entwickler, seine eigenen, komplexen Datentypen zu definieren?
 
 > :information_source: Eigene Typen sollten immer sinnvolle Bezeichnungen haben. Beschreibt euer Typ eine einzelnes Haus? Dann sollte der Typ auch "Haus" und nicht "Häuser" heißen. Grundsätzlich legen wir ja einen "Bauplan" für ein einzelnes Objekt an, und erschaffen dann mehrere dieser einzelnen Objekte.
 
-### 2.3
+### 4.3
 Stelle dir vor du willst ein System für die Hochschule entwickeln, um alle Studenten abzuspeichern und zu verwalten.
 
-#### 2.3.1
+#### 4.3.1
 Definiere einen komplexen Datentyp für einen solchen Studenten. Wie könnte dieser Aussehen, welche Eigenschaften sollte dieser haben?
 
-#### 2.3.2 
+#### 4.3.2 
 Erschaffe drei verschiedene Studenten, fülle sie mit sinnvollen Werten und speichere diese in variablen ab.
 
-#### 2.3.3
+#### 4.3.3
 Packe diese Variablen in ein Array von Studenten _(Typisierung!)_. Außerdem, gebe auf der Konsole einige Eigenschaften der Studenten aus.
 
-#### 2.3.4 
+#### 4.3.4 
 Schreibe eine Funktion `showInfo(...)` mit geeigneten Übergabeparametern, welche wichtige Infos über einen Studenten auf der Konsole ausgibt (z.B: "Max Mustermann, Matrikelnummer: 123456, Studiengang: MUM, ....").
 
 Rufe diese Funktion einmal für jeden Studenten auf.
 
 
-## Aufgabe 4
+## Aufgabe 5
 
-### 4.1
+### 5.1
 Schreibe ein Funktion mit der Signatur `add(a: number, b: number): number` welche die zwei übergebenen Zahlen a und b zusammenzählt und das Ergebnis zurück gibt.
 
 Bringe anschließend den folgenden code zum laufen.
@@ -262,35 +268,44 @@ let c: number = add(a,b);
 console.log(c);
 ```
 
-### 4.2 
+### 5.2 
 Schreibe eine Funktion mit der Signatur `divideable(a: number, b:number): boolean` welche dann `true` zurück geben soll, wenn die erste Zahl ohne Rest durch die zweite Zahl teilbar ist. Prüfe die Funktion mit einem eigenen Testprogramm.
 
-### 4.3 :star:
+### 5.3 :star:
 Schreibe eine Funktion mit der Signatur `ggT(a: number, b:number): number` welche den größten gemeinsamen Teiler der beiden übergebenen Variablen zurück gibt.
 
-### 4.4 :star:
-Schreibe eine Funktion mit der Signatur `kgV(a:number, b:number): number` welche das kleinste gemeinsame Vielfache der beiden übergebenen Zahlen zurück gibt. Inwiefern hängen Aufgabe 4.3 und 4.4 zusammen?
+### 5.4 :star:
+Schreibe eine Funktion mit der Signatur `kgV(a:number, b:number): number` welche das kleinste gemeinsame Vielfache der beiden übergebenen Zahlen zurück gibt. Inwiefern hängen Aufgabe 5.3 und 5.4 zusammen?
 
-## Aufgabe X :star:
+### 5.5 
+Schreibe eine Funktion welche die Zahlen 1/2, 1/4, 1/8, 1/16, ... aufsummiert und das Ergebnis zurück gibt, in zwei Varianten:
+
+#### 5.5.1
+Als Übergabeparameter erhält die Funktion eine Zahl, die angibt, wie viele Summanden für die Summe berücksichtigt werden sollen. Zum Beispiel bedeutet die Übergabe von 20, dass der letzte berücksichtigte Summand 1/2<sup>20</sup> ist.
+
+#### 5.5.2
+Als Übergabeparameter erhält die Funktion eine Zahl für die Genauigkeit (z.B. epsilon=0.001) mit der die Summe berechnet werden soll. Es soll so lange summiert werden, bis gilt summand < epsilon, wobei summand=1/2n, mit n=1,2,3,4,5,...
+
+## Aufgabe 6 :star:
 
 Bei diesen Aufgaben geht es um Arraymanipulation. Für jede Unteraufgabe soll eine eigene Funktion erstellt werden welche die zu verarbeitenden Arrays als Parameter entgegen nimmt, verarbeitet und das Ergebnis zurück gibt. Geht von Number Arrays aus. _Die meisten dieser Aufgaben/Funktionen sind in der generischen Array Klasse bereits implementiert. Diese eingebauten Funktionen sollen hier gerade NICHT verwendet, sondern selbst geschrieben werden. Außerdem muss darauf geachtet werden, dass die übergebenen Arrays nicht verändert werden, sondern ein neues Array angelegt und verändert wird!_
 
-> :information_source: Hier ist die Differenzierung zwischen Call by Value und Call by Reference wichtig zu verstehen. [Zum nachlesen.](https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c)
+> :warning: Hier ist die Differenzierung zwischen Call by Value und Call by Reference wichtig zu verstehen. [Zum nachlesen.](https://medium.com/nodesimplified/javascript-pass-by-value-and-pass-by-reference-in-javascript-fcf10305aa9c)
 
-### X.1
+### 6.1
 Eine Funktion `backwards(...)`, welche ein Array entgegen nimmt und rückwärts zurück gibt.
 
-### X.2  
+### 6.2  
 Eine Funktion `join(...)` die zwei Arrays zusammenfügt, indem es das zweite hinter das erste hängt.
 
-### X.3
+### 6.3
 Eine Funktion `split(...)` die ein Array und zwei indexe entgegen nimmt und das Array zwischen diesen beiden Indexen zurück gibt. _Bonus: Hier wäre eine Prüfung der übergebenen Indizes angebracht. Welche Prüfungen sind dies? Implementiere das auch._
 
-### X.4 :star2:
+### 6.4 :star2:
 Eine Funktion `sort(...)` welche das übergebene Array sortiert zurück gibt. _Bonus: ein weiterer Übergabeparameter der darüber entscheiden soll, ob aufsteigend oder absteigend sortiert werden soll. Standardmäßig soll dieser auf "aufsteigend" stehen. :dizzy:_
 > :information_source: [Optionale und Standard Parameter](https://medium.com/@kgrvr/typescript-functions-optional-parameters-b245e7a06d7d)
 
-### X.5
+### 6.5
 Wenn alle obigen Aufgaben erfüllt worden sind, sollte folgender Code problemlos laufen. Werden die richtigen Ausgaben ausgegeben?
 ```typescript
 let arr: number[] = [5, 42, 17, 2018, -10, 60, -10010];
@@ -306,6 +321,96 @@ console.log(split(arr,1,2);
 console.log(sort(arr));
 ```
 
-## Aufgabe Y
+## Aufgabe 7 :star:
 
-### Y.1
+### 7.1
+Programmiere einen Stapel (Stack) für Zahlen. Stapel bedeutet, das zuletzt eingefügte Element wird zuerst entfernt. Dem Stack sollen Elemente hinzugefügt sowie entnommen werden können. Beginne mit dem Einfügen an Stelle 0 des Arrays. Ggf sollte eine Variable zur aktuellen Anzahl der Elemente im Array verwaltet werden. Dadurch kann die Position zum Einfügen eines neuen sowie zurückgeben des aktuellsten Elements definiert. Berücksichtige den Fall, dass aus einem leeren Stapel kein Element entnommen werden kann.
+Wie hast du das Programm getestet?
+
+#### 7.1.1 
+Wie ändert sich der Code wenn der Stapel eine maximale Größe von 10 Elementen haben soll? Bedenke hier auch, dass einem vollen Stapel nichts mehr hinzugefügt werden kann. 
+
+### 7.2
+Schreibe ein Programm zur Ermittlung der ersten 1000 Primzahlen. Merke dir die gefundenen Primzahlen in einem Array. Beginne mit der Primzahl 2 an der Stelle 0 im Array. Prüfe alle Zahlen beginnend mit 3. Prüfe jede neue Zahl ob sie prim ist, indem du sie durch jede vorherige gefundene Primzahl teilst. Ist die Zahl durch keine vorherige Primzahl teilbar, so ist sie prim. Speichere diese Zahl in das Array. Gebe die 1000ste Primzahl auf der Konsole aus.  
+_In dieser Aufgabe ist eine große Chance für Optimisierung, indem man aufhört, die Zahlen zu testen, nachdem man eine gefunden hat, durch die die zu testende Zahl teilbar ist. Wenn du kannst, versuche das mit einzubauen._
+
+### 7.3
+Schreibe _je eine Funktion_, welche eine übergebene Zeichenkette analysiert/verarbeitet. 
+
+#### 7.3.1 :star2:
+Bestimme die Anzahl der Vokale (a, e, i, o, u) in einer Zeichenkette (Kleinbuchstaben ohne Umlaute genügen). Hierzu kann auf die einzelnen Zeichen der string Variable wie in einem Array (string[index]) oder mit der Funktion string.charAt(index) zugegriffen werden. Gebe das Ergebnis auf der Konsole aus.
+
+#### 7.3.2 :dizzy:
+> :information_source: Jedes Zeichen in einer Zeichenkette ist nicht einfach nur ein Zeichen, sondern kann mithilfe von [ASCII Codierung](http://www.asciitable.com/) in einen Zahlenwert umgewandelt werden (und natürlich auch wieder zurück). Diese Codes können in Typescript mithilfe von der Funktion [charCodeAt](https://www.tutorialspoint.com/typescript/typescript_string_charcodeat.htm) ausgelesen und mit der Funktion [String.fromCharCode](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode) zurück gewandelt werden. Der Buchstabe A entspricht dabei 65, der Buchstabe a der 97.
+
+Schreibe eine Funktion, welche einen string entgegen nimmt und mithilfe der Funktionen `charCodeAt` und `fromCharCode` alle Großbuchstaben in ihre zugehörigen Kleinbuchstaben umwandelt. Alle andere Zeichen sollen dadurch nicht beeinflusst werden.
+
+#### 7.3.3 :dizzy:
+Verschlüssle den übergebenen String mit einer sogenannten [Caesar-Verschlüsselung](https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung), indem die Buchstaben alle um einen Wert weiter verschoben werden (a -> b, b -> c, ... y -> z, z -> a). Nutze hierfür die ASCII Codierung. Beispiel: aus hal wird ibm. Gebe das Ergebnis auf der Konsole aus und aus der Funktion zurück.
+
+#### 7.3.4 :dizzy:
+Schreibe eine Entschlüsselung für den in 7.3.3 geschriebenen String, so dass nach Verschlüsselung und Entschlüsselung wieder der originale Text zu sehen ist. Gebe das Ergebnis auf der Konsole aus und aus der Funktion zurück.
+
+#### 7.3.5 :dizzy:
+Erweitere das Verfahren aus 7.3.3 und 7.3.4 auf eine beliebige Zeichenrotation und übergebe die Rotationsmenge als Funktionsparameter.  
+
+> ```C=(T-'A'+ n)%26+'A'```  
+> C=Cypherzeichen, T=Klartextzeichen, jeweils ASCII Code, Rotation um n Buchstaben.  
+> Beispiel: (C=('B'-'A'+ 5 )%26+'A'='G' )
+
+> :information_source: Dies nennt man auch eine Cäsar-Chiffre
+
+### 7.4 :star2:
+
+> :information_source: Eine rekursive Funktion ist eine Funktion, welche sich selbst erneut aufruft. Dies eröffnet viele neue Möglichkeiten der Programmierung. Beispiel: 
+```typescript
+f1(0);
+function f1(a:number){
+    if(a < 5) 
+    {
+        f1(a+1);
+    }
+    console.log(a);
+}
+```
+
+Ein klassisches Beispiel für eine rekursive Funktion ist die Fakultät:  
+fakultaet(n+1) = (n+1) * fakultaet(n), fakultät(0)=1.  
+Es gilt n>=0. Programmiere die Fakultät über eine rekursive Funktion.
+
+### 7.5 :star2:
+In einer vorherigen Aufgabe haben wir die Fibonacci Reihe schon iterativ berechnet. Berechne jetzt die n-te Fibonacci Zahl rekursiv. Rekursive Definition der Fibonacci Reihe: f(n):=f(n-1)+f(n-2) mit den Abbruchbedingungen f(1)=1 und f(0)=0;
+
+## Aufgabe 8 :dizzy: Schachbrett
+
+> :information_source: In einem Array kann ein beliebiger Datentyp gespeichert werden. Dies gilt sowohl für die bereits vordefinierten (number, string, etc) wie auch für selbst definierte (interface, class). Ein Array ist allerdings auch ein Datentyp. Dies hat zur Folge, dass wir in unserem Array auch Arrays speichern können. Hier ist dann die Rede von [mehrdimensionalen Arrays](https://www.tutorialspoint.com/typescript/typescript_multi_dimensional_arrays.htm). Die Zugriffsweise ist intuitiv ähnlich wie bei einem eindimensionalem Array: array[0][1] greift auf das zweite Element aus dem Array zu, welches im ersten Element gespeichert ist.
+
+Definiere ein zweidimensionales Array als Schachbrett, also 8 Felder hoch und 8 Felder breit. Als Datentyp wählen wir zunächst boolean, so dass in unseren Feldern entweder true oder false stehen kann. Zu beginn sollten alle Felder mit false initialisiert werden (hier würde sich eine verschachtelte Schleife anbieten).
+
+### 8.1
+Finde eine geeignete Methode um das Ergebnis der folgenden Aufgaben zu visualisieren. Entweder über eine gut formatierte Konsolenausgabe oder mehr visuelle Ausgabe auf der Seite (komplexer!).
+
+### 8.2
+Ein Turm kann sich im Schach nur gerade bewegen, entweder waagrecht oder senkrecht. Schreibe eine Funktion welche eine Position in Form von zwei Variablen für das Schachbrett entgegen nimmt und alle möglichen neuen Positionen innerhalb des Schachbretts für den Turm auf true setzt. Gebe das Ergebnis aus.
+
+### 8.3
+Ein Pferd kann sich im Schach immer zwei Felder in einer geraden Linie, mit anschließend einem Feld nach links oder rechts bewegen. Wiederholen sie die Aufgabe Z.2 mit einem Springer/Pferd.
+
+### 8.4 :dizzy: :dizzy:
+Als "Springerproblem" wird das Problem bezeichnet, einen Springer/Pferd auf einem leeren Schachbrett so hin und her zu ziehen, dass jedes Feld genau einmal besucht wird. Schreibe ein Programm das zu einer gegebenen Position versucht, diese Route zu finden. _Zusatz :dizzy:: finde eine Möglichkeit die Reihenfolge der Schritte anzuzeigen, oder diese in form der Ausgabe von oben sogar "nachzuspielen"._
+
+**Lösungshinweise:**  
+Am besten lösbar ist dieses Problem über rekursive Funktionen, lässt sich aber auch imperativ lösen.  
+Auch dieses Problem lässt sich am besten durch ausprobieren und nicht durch nachdenken lösen. Lass den Springer sich so lange bewegen, bis es keine weitere Möglichkeit gibt sich weiter zu bewegen. Wenn alle Felder abgedeckt sind, ist eine Lösung gefunden. Hat sich der Algorithmus in eine Ecke bewegt, mache den letzten Schritt ungeschehen und versuche einen anderen Weg. Führt auch dieser in eine Sackgasse mache ihn ungeschehen und versuche einen anderen Weg.  
+Ein Springer hat bis zu 8 verschiedene Bewegungsmöglichkeiten. Wie können diese programmatisch und im Bezug auf ein zweidimensionales Array dargestellt werden?
+
+## Aufgabe 9 :dizzy: :dizzy: :dizzy: Taschenrechner
+
+Programmiere einen Taschenrechner. Lege dazu im HTML Dokument ein Textinput Feld, einen "Berechnen" Knopf sowie ein Bereich für das Ergebnis an. Stelle sicher, dass du auf all diese Elemente einfach aus dem Code zugreifen kannst (z.B. über IDs und GetElementById). Füge über `addEventListener` den Button einen Klick-Listener hinzu, welcher die die Funktion zur Auswertung aufruft.  
+Im Textinput Feld soll der Nutzer einen beliebigen (nach unseren Regeln gültigen) Ausdruck eingeben können, welcher dann von unserem Programm ausgewertet wird. Zulässige Elemente des Ausdrucks sind Ganzzahlkonstanten, Trennzeichen, die Klammern ( und ) und die binären Operatoren +, -, \*, / und %.  
+Ein Beispiel für einen gültigen Ausdruck: `(1+3)\*89+27%2-(567/45)`. Leerzeichen sollen erlaubt sein.
+
+**Lösungshinweise:**  
+In einem ersten Schritt müssen der Ausdruck geparst, d.h. die Elemente des Ausdrucks (Konstanten, Operatoren, Klammern) identifiziert werden. Eine switch Anweisung ist hier eine gute Wahl. Ein Array vom typ string ist eine einfache Möglichkeit, die Elemente zu speichern. 
+Im zweiten Schritt muss der Ausdruck als Baumstruktur aufbereitet werden. An der Wurzel steht ein Operator, dieser verknüpft zwei Operanden. Die einwertigen Operanden + und – berücksichtigen wir nicht. Der Ausdruck: `+3` wäre also ein ungültiger Ausdruck. Die Konstanten bilden die Blätter des Baums. Die Operatoren bilden die inneren Knoten des Baumes. Dabei muss die Prioritäten der Operatoren (Punktrechnung vor Strichrechnung) und die Klammern berücksichtigt werden. Bei gleicher Priorität ist das Verhalten undefiniert. Darum muss man sich also nicht kümmern.  
+Im dritten Schritt wird der Baum ausgewertet, d.h. reduzieren von den Blättern, bis nur noch eine Konstante übrig ist.

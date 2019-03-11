@@ -105,3 +105,133 @@ Zwischensumme: 5
 
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
+
+## Aufgabe 3
+### 3.1
+```typescript
+let a: boolean = true;
+let b: boolean = true;
+let c: boolean = false;
+
+let erg: boolean = ((!a || b) && c) || ((!b || c) && a);
+console.log(erg);			//false
+```
+
+### 3.2
+```typescript
+let erg: number = 0;
+let i: number = 1;
+while (i <= 100){
+	erg += i;
+	i++;
+}
+console.log(erg);       //5050
+```
+
+### 3.3
+```typescript
+let erg: number = 1;
+let i: number = 1;
+do {
+	erg = erg * i;
+	i++;
+} while (i <= 8)
+console.log(erg);       //40320
+```
+
+### 3.4 
+```typescript
+let num1: number = 0;
+let num2: number = 1;
+console.log(num1);
+console.log(num2);
+for(let i: number = 1; i < 20; i++){
+	let tmp: number = num2 + num1;
+	num1 = num2;
+	num2 = tmp;
+	console.log(num2);
+}
+```
+20. Fibonacci Zahl: 6765
+
+### 3.5
+```typescript
+for(let i: number = 0; i < 10; i++){
+	let num: number = Math.floor(Math.random() * 2147483647)
+	console.log(num);
+}
+```
+_Ich habe 2147483647 genutzt weil das genau 2<sup>31</sup>-1 entspricht, was in vielen Sprachen das obere Limit für Ganzzahlwerte in 32 bit Systemen ist, und auch das nur um euch ganz nebenbei diesen Fakt beizubringen._
+
+### 3.6
+```typescript
+function prim(min: number, max: number): void {
+	for (let i: number = min; i < max; i++) {   //für jede Zahl i zwischen dem Minimum und Maximum
+		let isPrim: boolean = true;			    //gehe davon aus, dass die Zahl i prim ist
+		for (let a: number = 2; a < i; a++) {   //für jede Zahl a zwischen 2 und der zu prüfenden Zahl i
+			if (i % a == 0) {                   //wenn die Zahl i durch a teilbar ist, ist sie keine Primzahl
+				isPrim = false;
+			}
+		}
+		if (isPrim) {                           //nachdem alle Zahlen getestet wurden, ist es immernoch prim?
+			console.log(i);								
+		}
+	}
+}
+
+prim(1, 100);                                   //zum testen
+```
+
+### 3.7
+```typescript
+for (let i: number = 1900; i < 2019; i++) {
+    let istSchaltjahr: boolean = false;
+    if (i % 4 == 0) {
+        if (i % 100 == 0) {
+            if (i % 400 == 0){
+                istSchaltjahr = true;
+            }
+        } else {
+            istSchaltjahr = true;
+        }
+    }
+    if(istSchaltjahr){
+        console.log(i);
+    }
+}
+```
+kürzer, aber unübersichtlicher:
+```typescript
+for (let i: number = 1900; i < 2019; i++) {
+    if (i % 4 == 0 && (!(i % 100 == 0)) || i % 400 == 0) {
+        console.log(i);
+    }
+}
+```
+
+### 3.8 
+```typescript
+for(let huehner:number = 0; huehner <= 45; huehner++){
+	for(let schafe: number = 0; schafe <= 22; schafe++){
+		if(gesamtBeine(huehner, schafe) == 90){
+			console.log(`${huehner} Hühner, ${huehner * 2} Gänse, ${schafe} Schafe, ${schafe * 3} Kaninchen`)
+		}
+	}
+}
+
+function gesamtBeine(huehnerGesamt: number, schafeGesamt: number): number {
+	let huhnerBeine: number = huehnerGesamt * 2;
+	let gaenseBeine: number = huehnerGesamt * 2 * 2;
+	let schafeBeine: number = schafeGesamt * 4;
+	let kaninchenBeine: number = schafeGesamt * 3 * 4;
+
+	return huhnerBeine + gaenseBeine + schafeBeine + kaninchenBeine;
+}
+```
+Ergebnisse:
+7 Hühner, 14 Gänse, 3 Schafe, 9 Kaninchen
+15 Hühner, 30 Gänse, 0 Schafe, 0 Kaninchen
+
+Beide Ergebnisse gefunden?
+
+### 3.9

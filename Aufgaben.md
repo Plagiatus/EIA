@@ -341,15 +341,16 @@ _In dieser Aufgabe gibt es eine große Chance für Optimierung, indem man aufhö
 Schreibe _je eine Funktion_, welche eine übergebene Zeichenkette analysiert/verarbeitet. 
 
 #### 7.3.1 :star2:
-Bestimme die Anzahl der Vokale (a, e, i, o, u) in einer Zeichenkette (Kleinbuchstaben ohne Umlaute genügen). Hierzu kann auf die einzelnen Zeichen der string Variable wie in einem Array (string[index]) oder mit der Funktion string.charAt(index) zugegriffen werden. Gebe das Ergebnis auf der Konsole aus.
+Bestimme die Anzahl der Vokale (a, e, i, o, u) in einer Zeichenkette (Kleinbuchstaben ohne Umlaute genügen). Hierzu kann auf die einzelnen Zeichen der string Variable wie in einem Array (string[index]) oder mit der Funktion string.charAt(index) zugegriffen werden. Gebe das Ergebnis auf der Konsole aus.  
+_Hinweis: Die Verwendung eines Switch Statements bietet sich hier an._
 
 #### 7.3.2 :dizzy:
 > :information_source: Jedes Zeichen in einer Zeichenkette ist nicht einfach nur ein Zeichen, sondern kann mithilfe von [ASCII Codierung](http://www.asciitable.com/) in einen Zahlenwert umgewandelt werden (und natürlich auch wieder zurück). Diese Codes können in Typescript mithilfe von der Funktion [charCodeAt](https://www.tutorialspoint.com/typescript/typescript_string_charcodeat.htm) ausgelesen und mit der Funktion [String.fromCharCode](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode) zurück gewandelt werden. Der Buchstabe A entspricht dabei 65, der Buchstabe a der 97.
 
-Schreibe eine Funktion, welche einen string entgegen nimmt und mithilfe der Funktionen `charCodeAt` und `fromCharCode` alle Großbuchstaben in ihre zugehörigen Kleinbuchstaben umwandelt. Alle andere Zeichen sollen dadurch nicht beeinflusst werden.
+Schreibe eine Funktion, welche einen string entgegen nimmt und mithilfe der Funktionen `charCodeAt` und `fromCharCode` alle Großbuchstaben in ihre zugehörigen Kleinbuchstaben umwandelt. Alle andere Zeichen sollen dadurch nicht beeinflusst werden. Gebe den resultierenden String zurück. (Die eingebauten Funktionen eines Strings wie "toLowerCase" sollen logischerweise nicht verwendet werden).
 
 #### 7.3.3 :dizzy:
-Verschlüssle den übergebenen String mit einer sogenannten [Caesar-Verschlüsselung](https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung), indem die Buchstaben alle um einen Wert weiter verschoben werden (a -> b, b -> c, ... y -> z, z -> a). Nutze hierfür die ASCII Codierung. Beispiel: aus hal wird ibm. Gebe das Ergebnis auf der Konsole aus und aus der Funktion zurück.
+Verschlüssle den übergebenen String mit einer sogenannten [Caesar-Verschlüsselung](https://de.wikipedia.org/wiki/Caesar-Verschl%C3%BCsselung), indem die Buchstaben alle um einen Wert weiter verschoben werden (a -> b, b -> c, ... y -> z, z -> a). Nutze hierfür die ASCII Codierung. Beispiel: aus hal wird ibm. Gebe das Ergebnis auf der Konsole aus und aus der Funktion zurück. Um die Sache etwas zu vereinfachen kannst du die Verschlüsselung auch nur auf Kleinbuchstaben beschränken.
 
 #### 7.3.4 :dizzy:
 Schreibe eine Entschlüsselung für den in 7.3.3 geschriebenen String, so dass nach Verschlüsselung und Entschlüsselung wieder der originale Text zu sehen ist. Gebe das Ergebnis auf der Konsole aus und aus der Funktion zurück.

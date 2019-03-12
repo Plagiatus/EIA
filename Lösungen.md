@@ -267,3 +267,40 @@ Hier wäre es natürlich auch eine Möglichkeit, jeden Wert einzeln abzufragen u
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
 
+## Aufgabe 4
+### 4.1
+Bekannt sollten sein: Boolean, Number, String(, Any). Aber es gibt noch mehr: [Klicke hier falls es interessiert, diese Typen sind für uns aber größtenteils erstmal nicht relevant](https://www.typescriptlang.org/docs/handbook/basic-types.html) _(besonders der Hinweis ganz am Ende der Seite ist noch interessant)_.
+
+### 4.2
+interface oder class. Der Vollständigkeit halber soll hier noch object genannt werden, ist aber für uns nicht relevant.
+
+### 4.3
+
+```typescript
+interface Student{
+	name: string;
+	matrikel: number;
+	studiengang: string;
+}
+
+let s1: Student = {name: "Max Mustermann", matrikel: 123456, studiengang: "MIB"};
+let s2: Student = {name: "Monika Musterfrau", matrikel: 654321, studiengang: "WNB"};
+let s3: Student = {name: "Thomas Teufel", matrikel: 666666, studiengang: "SSB"};
+
+let studenten: Student[] = [s1, s2, s3];
+console.log(studenten[0].name);
+
+function showInfo(s: Student): void {
+	console.log(`${s.name}, Matrikelnummer ${s.matrikel}, Studiengang ${s.studiengang}`);
+}
+showInfo(studenten[0]);
+showInfo(studenten[1]);
+showInfo(studenten[2]);
+```
+
+---
+
+### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
+Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
+
+## Aufgabe 5

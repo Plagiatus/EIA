@@ -6,6 +6,8 @@ _Die Lösungen sind noch in Arbeit und kommen hoffentlich nach und nach._
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
 
 
+**Falls es Unklarheiten oder Fragen gibt, zögert nicht mich darauf anzusprechen, am besten über die [Issues](https://github.com/Plagiatus/EIA/issues).**
+
 ## Aufgabe 1
 ### 1.1
 Variablennamen können nicht mit Zahlen beginnen oder nur aus Zahlen bestehen. Leerzeichen können nicht genutzt werden. Einige Sonderzeichen (die von der Sprache reservierten) können nicht genutzt werden. Namen dürfen nicht sprach-reservierte Wörter (wie let, var, function, etc) sein.
@@ -304,3 +306,90 @@ showInfo(studenten[2]);
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
 
 ## Aufgabe 5
+### 5.1
+```typescript
+function add(a: number, b: number): number {
+	return a + b;
+}
+```
+
+### 5.2
+```typescript
+function divideable(a: number, b:number): boolean {
+	return a % b == 0;
+}
+```
+
+### 5.3
+```typescript
+function ggT(a: number, b:number): number{
+	if(a == 0) return b;
+	if(b == 0) return a;
+	
+	let tmp: number;
+	while (b != 0){
+		tmp = a % b;
+		a = b;
+		b = tmp;
+	}
+	return a;
+}
+
+console.log(ggT(3528,3780)); 	//252
+```
+Es gibt viele Möglichkeiten einen größten gemeinsamen Teiler zu berechnen, ich nutze hier einen modernen euklidischen bzw steinischen Algorithmus.
+
+Ein Brute-Force Ansatz wäre natürlich auch denkbar: Nehme die kleinere der beiden Zahlen und prüfe ob bei der Division mit beide Zahlen kein Rest bleibt. Wiederhole solange mit der zahl--, bis dies der Fall ist. Das ist natürlich absolut unoptimiert und hat eine lange Laufzeit, aber so wäre es definitv möglich. Codebeispiel (nur für positive Zahlen):  
+
+```typescript
+function ggT(a: number, b:number): number{
+	//angenommen dass b kleiner ist als a
+	let tmp: number = b;
+	while (a % tmp != 0 || b % tmp != 0) {
+		tmp--;
+	}
+	return tmp;
+}
+```
+
+### 5.4
+```typescript
+function kgV(a: number, b: number): number{
+	//berechnung über den ggT
+	return (a / ggT(a, b)) * b;
+}
+```
+Der kgV und der ggT hängen direkt zusammen (von Wikipedia): ![bild](https://wikimedia.org/api/rest_v1/media/math/render/svg/97031de120e42d752c1d5cdcaaf2fcf487d639bd).  
+ Wir können diese Formel also umformen um den kgV zu berechnen. Auch hier sind natürlich andere Ansätze Möglich (Primfaktorzerlegung) aber wenn wir bereits den ggT haben, ist dieser Ansatz am einfachsten.
+ 
+ ### 5.5
+ #### 5.5.1
+ ```typescript
+ function summeBisN(n: number): number{
+	let sum: number = 0;
+	for(let i: number = 0; i < n; i++){
+		sum += (1 / Math.pow(2, i + 1));
+	}
+	return sum;
+}
+console.log(summeBisN(20)); 	// 0.9999990463256836
+ ```
+ 
+ #### 5.5.2
+ ```typescript
+ function summeBisEpsilon(epsilon: number): number{
+	let sum: number = 0;
+	let summand: number = 0.5;
+	while(summand >= epsilon){
+		sum += summand;
+		summand /= 2;
+	}
+	return sum;
+}
+console.log(summeBisEpsilon(0.001)); 	// 0.998046875
+ ```
+ 
+ ---
+
+### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
+Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:

@@ -507,3 +507,185 @@ Keine Lösung nötig
 
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
+
+## Aufgabe 7
+### 7.1
+```typescript
+let stack: number[] = []
+
+function insert(a: number): void{
+	stack[stack.length] = a;
+}
+
+function take(): number{
+	if(stack.length == 0) return null;
+	let tmp: number = stack[stack.length - 1];
+	stack.splice(stack.length - 1);
+	return tmp;
+}
+```
+
+#### 7.1.1
+```typescript
+function insert(a: number): void{
+	if(stack.length >= 10) return;
+	stack[stack.length] = a;
+}
+```
+
+### 7.2
+```typescript
+let primes: number[] = [2];
+
+let numToTest: number = 3;
+let isPrim: boolean;
+while(primes.length < 1000){
+	isPrim = true;
+	for(let i: number = 0; i < primes.length && isPrim; i++){
+		if(numToTest % primes[i] == 0){
+			isPrim = false;
+		}
+	}
+	if(isPrim) {
+		primes.push(numToTest);
+	}
+	numToTest++;
+}
+console.log(primes[999]);
+```
+Die 1000ste Primzahl ist 7919. Wer weitere seiner Primzahlen prüfen möchte, [klickt hier](https://primes.utm.edu/nthprime/index.php#nth).
+
+### 7.3
+#### 7.3.1
+```typescript
+function amountVocals(input: string){
+	let a: number = 0;
+	let e: number = 0;
+	let i: number = 0;
+	let o: number = 0;
+	let u: number = 0;
+
+	for(let x: number = 0; x < input.length; x++){
+		switch(input[x]){
+			case "a":
+			case "A":
+				a++;
+				break;
+			case "e":
+			case "E":
+				e++;
+				break;
+			case "i":
+			case "I":
+				i++;
+				break;
+			case "o":
+			case "O":
+				o++;
+				break;
+			case "u":
+			case "U":
+				u++;
+				break;
+			default:
+				//do nothing
+				break;
+		}
+	}
+	console.log(`The input string "${input}" has ${a} a's, ${e} e's, ${i} i's, ${o} o's and ${u} u's.`);
+}
+```
+Hier sind selbstverständlich auch kompaktere Lösungen denkbar, aber dies ist eine übersichtliche und verständliche Lösung.
+
+#### 7.3.2
+```typescript
+function toLowerCase(input: string): string{
+	let output: string = "";
+	let magicNumber: number = "a".charCodeAt(0) - "A".charCodeAt(0);	//32
+	for(let i: number = 0; i < input.length; i++){
+		if(input.charCodeAt(i) >= "A".charCodeAt(0) && input.charCodeAt(i) <= "Z".charCodeAt(0)){
+			output += String.fromCharCode(input.charCodeAt(i) + magicNumber);
+		} else {
+			output += input.charAt(i);
+		}
+	}
+	return output;
+}
+```
+
+#### 7.3.3
+```typescript
+unction encrypt(input: string): string {
+	let output: string = "";
+	for (let i: number = 0; i < input.length; i++) {
+		//Großbuchstabe
+		if ((input.charCodeAt(i) >= "A".charCodeAt(0) && input.charCodeAt(i) < "Z".charCodeAt(0)) ||
+			(input.charCodeAt(i) >= "a".charCodeAt(0) && input.charCodeAt(i) < "z".charCodeAt(0))) {
+			output += String.fromCharCode(input.charCodeAt(i) + 1);
+		//Kleinbuchstabe
+		} else if (input[i] == "z" || input[i] == "Z") {
+			output += String.fromCharCode(input.charCodeAt(i) - 25);
+		//Alles andere
+		} else {
+			output += input[i];
+		}
+	}
+	console.log("encrypted string:", output);
+	return output;
+}
+```
+
+#### 7.3.4
+```typescript
+function decrypt(input: string): string {
+	let output: string = "";
+	for (let i: number = 0; i < input.length; i++) {
+		if ((input.charCodeAt(i) > "A".charCodeAt(0) && input.charCodeAt(i) <= "Z".charCodeAt(0)) ||
+			(input.charCodeAt(i) > "a".charCodeAt(0) && input.charCodeAt(i) <= "z".charCodeAt(0))) {
+			output += String.fromCharCode(input.charCodeAt(i) - 1);
+		} else if (input[i] == "a" || input[i] == "A") {
+			output += String.fromCharCode(input.charCodeAt(i) + 25);
+		} else {
+			output += input[i];
+		}
+	}
+	console.log("decrypted string:", output);
+	return output;
+}
+```
+
+#### 7.3.5
+```typescript
+function encrypt(input: string, n: number = 1): string {
+	let output: string = "";
+	for (let i: number = 0; i < input.length; i++) {
+		if (input.charCodeAt(i) >= "A".charCodeAt(0) && input.charCodeAt(i) <= "Z".charCodeAt(0)){
+			output += String.fromCharCode( (input.charCodeAt(i) - "A".charCodeAt(0) + n) % 26 + "A".charCodeAt(0));
+		} else if (input.charCodeAt(i) >= "a".charCodeAt(0) && input.charCodeAt(i) <= "z".charCodeAt(0)){
+			output += String.fromCharCode( (input.charCodeAt(i) - "a".charCodeAt(0) + n) % 26 + "a".charCodeAt(0));
+		} else {
+			output += input[i];
+		}
+	}
+	console.log("encrypted string:", output);
+	return output;
+}
+
+function decrypt(input: string, n: number = 1): string {
+	let output: string = "";
+	for (let i: number = 0; i < input.length; i++) {
+		if (input.charCodeAt(i) >= "A".charCodeAt(0) && input.charCodeAt(i) <= "Z".charCodeAt(0)){
+			output += String.fromCharCode( (26 + (input.charCodeAt(i) - "A".charCodeAt(0) - n)) % 26 + "A".charCodeAt(0));
+		} else if (input.charCodeAt(i) >= "a".charCodeAt(0) && input.charCodeAt(i) <= "z".charCodeAt(0)){
+			output += String.fromCharCode( (26 +(input.charCodeAt(i) - "a".charCodeAt(0) - n)) % 26 + "a".charCodeAt(0));
+		} else {
+			output += input[i];
+		}
+	}
+	console.log("decrypted string:", output);
+	return output;
+}
+```
+Anmerkung zum Entschlüsseln: Je nach dem ob die Rechnung -1 % 26 das Ergebnis -1 oder 25 hat, braucht man die hinzugefügte `26 +`. TS sagt -1 mod 26 ist -1, darum wird es benötigt.
+
+### 7.4

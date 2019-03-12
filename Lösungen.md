@@ -393,3 +393,117 @@ console.log(summeBisEpsilon(0.001)); 	// 0.998046875
 
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
+
+## Aufgabe 6
+### 6.1
+```typescript
+function backwards(input: number[]): number[]{
+	let output: number[] = [];
+	for(let i: number = 0; i < input.length; i++){
+		output[input.length - i - 1] = input[i];
+	}
+	return output;
+}
+```
+
+### 6.2
+```typescript
+function join(input1: number[], input2: number[]): number[]{
+	let output: number[] = [];
+	let i: number;
+	for(i = 0; i < input1.length; i++){
+		output[i] = input1[i];
+	}
+	for(let a: number = 0; a < input2.length; a++){
+		output[a+i] = input2[a];
+	}
+	return output;
+}
+```
+
+### 6.3 
+```typescript
+function split(input: number[], firstIndex: number, lastIndex: number): number[]{
+	//either of them is negative
+	if(firstIndex < 0 || lastIndex < 0) return null;
+	//start is bigger than end
+	if(firstIndex > lastIndex) return null;
+	//either of the indexes is out of the scope of the input array
+	if(firstIndex > input.length - 1 || lastIndex > input.length - 1) return null;
+
+	let output: number[] = [];
+	for(let i: number = 0; i < lastIndex - firstIndex + 1; i++){
+		output[i] = input[firstIndex + i];
+	}
+	return output;
+}
+```
+
+### 6.4
+```typescript
+function sort(input: number[]): number[]{
+	let output: number[] = [];
+
+	//kopiere input in output, s. call by reference
+	for(let a: number = 0; a < input.length; a++){
+		output[a] = input[a];
+	}
+
+	//rudimentärer sortieralgorithmus
+	for(let n: number = 0; n < output.length; n++){
+		for(let i: number = 0; i < output.length - 1; i++){
+			if(output[i] > output[i + 1]){
+				let tmp = output[i];
+				output[i] = output[i+1];
+				output[i+1] = tmp;
+			}
+		}
+	}
+
+	return output;
+}
+```
+Sehr rudimentärer und unoptimierter Sortieralgorithmus: Gehe Schritt für Schritt alle Objekte des Arrays durch. Wenn sie größer sind als das Nachfolge-Element, vertausche sie. Gehe das Array so oft komplett durch, wie Elemente im Array sind, dadurch ist sichergestellt, dass alle Positionen sortiert sind. Eine schlechte Form des [Bubblesort](https://de.wikipedia.org/wiki/Bubblesort).
+
+Mit Richtungsänderung:
+
+```typescript
+function sort(input: number[], ascending: boolean = true): number[]{
+	let output: number[] = [];
+
+	//kopiere input in output, s. call by reference
+	for(let a: number = 0; a < input.length; a++){
+		output[a] = input[a];
+	}
+
+	//rudimentärer sortieralgorithmus
+	for(let n: number = 0; n < output.length; n++){
+		for(let i: number = 0; i < output.length - 1; i++){
+			if(ascending){
+				if(output[i] > output[i + 1]){
+					let tmp = output[i];
+					output[i] = output[i+1];
+					output[i+1] = tmp;
+				}
+			} else {
+				if(output[i] < output[i + 1]){
+					let tmp = output[i];
+					output[i] = output[i+1];
+					output[i+1] = tmp;
+				}
+			}
+		}
+	}
+
+	return output;
+}
+```
+Auch hier wieder sehr rudimentär und nicht sehr schön aber hoffentlich nachvollziehbar. Schöner wäre es eine Lösung zu finden, bei der der vertauschen Algorithmus nicht kopiert werden muss. Denn merke: Wenn man Code einfach nur kopiert ohne daran etwas zu ändern, macht man etwas falsch.
+
+### 6.5 
+Keine Lösung nötig
+
+---
+
+### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
+Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:

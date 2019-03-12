@@ -335,7 +335,7 @@ Wie ändert sich der Code wenn der Stapel eine maximale Größe von 10 Elementen
 
 ### 7.2
 Schreibe ein Programm zur Ermittlung der ersten 1000 Primzahlen. Merke dir die gefundenen Primzahlen in einem Array. Beginne mit der Primzahl 2 an der Stelle 0 im Array. Prüfe alle Zahlen beginnend mit 3. Prüfe jede neue Zahl ob sie prim ist, indem du sie durch jede vorherige gefundene Primzahl teilst. Ist die Zahl durch keine vorherige Primzahl teilbar, so ist sie prim. Speichere diese Zahl in das Array. Gebe die 1000ste Primzahl auf der Konsole aus.  
-_In dieser Aufgabe ist eine große Chance für Optimisierung, indem man aufhört, die Zahlen zu testen, nachdem man eine gefunden hat, durch die die zu testende Zahl teilbar ist. Wenn du kannst, versuche das mit einzubauen._
+_In dieser Aufgabe gibt es eine große Chance für Optimierung, indem man aufhört, die Zahlen zu testen, nachdem man eine gefunden hat, durch die die zu testende Zahl teilbar ist. Wenn du kannst, versuche das mit einzubauen._
 
 ### 7.3
 Schreibe _je eine Funktion_, welche eine übergebene Zeichenkette analysiert/verarbeitet. 

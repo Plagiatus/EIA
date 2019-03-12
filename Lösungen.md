@@ -48,6 +48,8 @@ Keine Lösung nötig
 ### 1.5
 Keine Lösung nötig
 
+---
+
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
 
@@ -102,6 +104,8 @@ Zwischensumme: 3
 Zwischensumme: 4
 Zwischensumme: 5
 ```
+
+---
 
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
@@ -235,3 +239,31 @@ Ergebnisse:
 Beide Ergebnisse gefunden?
 
 ### 3.9
+```typescript
+function rueckgeld(preis: number, gegeben: number): void {
+	if(gegeben < preis){
+		console.log("Zu wenig Geld gegeben");
+		return;
+	}
+	let zurueck: number = gegeben - preis;
+	let geld: number[] = [500,200,100,50,20,10,5,2,1,0.5,0.2,0.1,0.05,0.02,0.01];
+	let geldzurueck: number[] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+	for(let i: number = 0; i < geld.length; i++){
+		while(zurueck > geld[i]){
+			geldzurueck[i]++;
+			zurueck -= geld[i];
+		}
+	}
+	console.log(`Scheine: ${geldzurueck[0]} 500er, ${geldzurueck[1]} 200er, ${geldzurueck[2]} 100er, ${geldzurueck[3]} 50er, ${geldzurueck[4]} 20er, ${geldzurueck[5]} 10er, ${geldzurueck[6]} 5er,
+	Münzen: ${geldzurueck[7]} 2er, ${geldzurueck[8]} 1er, ${geldzurueck[9]} 50er, ${geldzurueck[10]} 20er, ${geldzurueck[11]} 10er, ${geldzurueck[12]} 5er, ${geldzurueck[13]} 2er, ${geldzurueck[14]} 1er`);
+}
+
+rueckgeld(0.02, 1000);
+```
+Hier wäre es natürlich auch eine Möglichkeit, jeden Wert einzeln abzufragen und eine eigene Schleife/Abfrage zu schreiben. Durch diese Lösung kann der Code aber auf ein Minimum reduziert werden und wird so nicht nur übersichtlicher sondern auch Wartungsfreundlicher. Die Abfrage am Anfang war nicht gefragt.
+
+---
+
+### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
+Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
+

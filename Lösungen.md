@@ -689,3 +689,32 @@ function decrypt(input: string, n: number = 1): string {
 Anmerkung zum Entschlüsseln: Je nach dem ob die Rechnung -1 % 26 das Ergebnis -1 oder 25 hat, braucht man die hinzugefügte `26 +`. TS sagt -1 mod 26 ist -1, darum wird es benötigt.
 
 ### 7.4
+```typescript
+function recursiveFaculty(n: number): number{
+	if (n <= 0) return 1;
+	return n * recursiveFaculty(n-1);
+}
+```
+Wenn man auch negative Zahlen zulassen möchte, so wäre eine einfache Änderung diese hier:
+
+```typescript
+function recursiveFaculty(n: number): number{
+	if (n == 0) return 1;
+	return n * recursiveFaculty(n - Math.sign(n));
+}
+```
+[Math.sign](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/sign)(Benötigt Buildtarget ES2015, ES6 oder neuer)
+
+### 7.5
+```typescript
+function recursiveFibbonacci(n: number): number{
+	if (n <= 0) return 0;
+	if (n == 1) return 1;
+	return recursiveFibbonacci(n-1) + recursiveFibbonacci(n-2);
+}
+```
+
+---
+
+### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
+Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:

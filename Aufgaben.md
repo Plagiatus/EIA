@@ -401,10 +401,13 @@ Ein Turm kann sich im Schach nur gerade bewegen, entweder waagrecht oder senkrec
 Ein Pferd kann sich im Schach immer zwei Felder in einer geraden Linie, mit anschließend einem Feld nach links oder rechts bewegen. Wiederholen sie die Aufgabe 8.2 mit einem Springer/Pferd.
 
 ### 8.4 :dizzy: :dizzy:
-Als "Springerproblem" wird das Problem bezeichnet, einen Springer/Pferd auf einem leeren Schachbrett so hin und her zu ziehen, dass jedes Feld genau einmal besucht wird. Schreibe ein Programm das zu einer gegebenen Position versucht, diese Route zu finden. _Zusatz :dizzy:: finde eine Möglichkeit die Reihenfolge der Schritte anzuzeigen, oder diese in form der Ausgabe von oben sogar "nachzuspielen"._
+Als [Springerproblem](https://de.wikipedia.org/wiki/Springerproblem) wird das Problem bezeichnet, einen Springer/Pferd auf einem leeren Schachbrett so hin und her zu ziehen, dass jedes Feld genau einmal besucht wird. Schreibe ein Programm das zu einer gegebenen Position versucht, diese Route zu finden. _Zusatz :dizzy:: finde eine Möglichkeit die Reihenfolge der Schritte anzuzeigen, oder diese in form der Ausgabe von oben sogar "nachzuspielen"._
+
+> :warning: Ein einfacher Backtracking Algorithmus ist die algorithmisch einfachste Lösung, allerdings kann dieser **SEHR LANGE** dauern (so lange um genau zu sein, dass euer Browser wahrscheinlich vorher abstürzt). Ich empfehle darum entweder ein kleineres Feld als 8x8 zu nutzen oder einen etwas schlaueren Algorithmus zu verwenden (z.B. Warnsdorf), wobei ich euch letzteres eher ans Herz legen würde. Zur Vorarbeit kann zunächst ein einfacher Backtracking Algorithmus verwendet und dieser dann umgeschrieben werden. 
+> :information_source: Um eine javascript datei ohne Browser auszuführen, kann ein _Nodeserver_ verwendet werden. Wenn ihr Typescript nutzt, habt ihr Node bereits installiert und könnt darum in der Konsole den Befehl `node pfad/zur/javascript/datei.js` verwenden. Zum Beenden dieses Servers die Tastenkombination STRG+C drücken.
 
 **Lösungshinweise:**  
-Am besten lösbar ist dieses Problem über rekursive Funktionen, lässt sich aber auch imperativ lösen.  
+Am besten lösbar ist dieses Problem über rekursive Funktionen.  
 Auch dieses Problem lässt sich am besten durch ausprobieren und nicht durch nachdenken lösen. Lass den Springer sich so lange bewegen, bis es keine weitere Möglichkeit gibt sich weiter zu bewegen. Wenn alle Felder abgedeckt sind, ist eine Lösung gefunden. Hat sich der Algorithmus in eine Ecke bewegt, mache den letzten Schritt ungeschehen und versuche einen anderen Weg. Führt auch dieser in eine Sackgasse mache ihn ungeschehen und versuche einen anderen Weg.  
 Ein Springer hat bis zu 8 verschiedene Bewegungsmöglichkeiten. Wie können diese programmatisch und im Bezug auf ein zweidimensionales Array dargestellt werden?
 

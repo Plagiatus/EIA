@@ -398,7 +398,7 @@ Finde eine geeignete Methode um das Ergebnis der folgenden Aufgaben zu visualisi
 Ein Turm kann sich im Schach nur gerade bewegen, entweder waagrecht oder senkrecht. Schreibe eine Funktion welche eine Position in Form von zwei Variablen für das Schachbrett entgegen nimmt und alle möglichen neuen Positionen innerhalb des Schachbretts für den Turm auf true setzt. Gebe das Ergebnis aus.
 
 ### 8.3
-Ein Pferd kann sich im Schach immer zwei Felder in einer geraden Linie, mit anschließend einem Feld nach links oder rechts bewegen. Wiederholen sie die Aufgabe Z.2 mit einem Springer/Pferd.
+Ein Pferd kann sich im Schach immer zwei Felder in einer geraden Linie, mit anschließend einem Feld nach links oder rechts bewegen. Wiederholen sie die Aufgabe 8.2 mit einem Springer/Pferd.
 
 ### 8.4 :dizzy: :dizzy:
 Als "Springerproblem" wird das Problem bezeichnet, einen Springer/Pferd auf einem leeren Schachbrett so hin und her zu ziehen, dass jedes Feld genau einmal besucht wird. Schreibe ein Programm das zu einer gegebenen Position versucht, diese Route zu finden. _Zusatz :dizzy:: finde eine Möglichkeit die Reihenfolge der Schritte anzuzeigen, oder diese in form der Ausgabe von oben sogar "nachzuspielen"._

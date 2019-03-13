@@ -703,7 +703,7 @@ function recursiveFaculty(n: number): number{
 	return n * recursiveFaculty(n - Math.sign(n));
 }
 ```
-[Math.sign](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/sign)(Benötigt Buildtarget ES2015, ES6 oder neuer)
+[Math.sign](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/sign) (Benötigt Buildtarget ES2015, ES6 oder neuer)
 
 ### 7.5
 ```typescript
@@ -718,3 +718,122 @@ function recursiveFibbonacci(n: number): number{
 
 ### :information_source: Die hier angegebenen Lösungen sind nur _eine_ von vielen.
 Programmieren ist ein kreativer Prozess mit mehr als einer Lösung. Wir versuchen selbstverständlich euch die einfachste und am besten verständliche Lösung zu präsentieren, aber das gelingt meistens nicht. :wink:
+
+## Aufgabe 8
+### 8.1
+```typescript
+function zeigeBrett(): void {
+	console.clear();
+	let output: string = "";
+	let divider: string = "├";
+	for(let i: number = 0; i < schachbrett.length; i++){
+		divider += "─┼";
+	}
+	divider = divider.slice(0, divider.length - 1) + "┤"
+	output += "┌" + divider.slice(1, divider.length - 1).replace(/┼/g,"┬") + "┐\n";
+	for(let i: number = 0; i < schachbrett.length; i++){
+		output += "|";
+		for(let n: number = 0; n < schachbrett[i].length; n++){
+			output += (schachbrett[i][n] ? "x" : " ") + "│";
+		}
+		if(i < schachbrett[i].length - 1) output += "\n" + divider + "\n";
+	}
+	output += "\n└" + divider.slice(1, divider.length - 1).replace(/┼/g,"┴") + "┘";
+	console.log(output);
+}
+
+function resetBrett(x: number, y: number): void {
+	schachbrett = [];
+	for(let i: number = 0; i < x; i++){
+		schachbrett[i] = [];
+		for(let a: number = 0; a < y; a++){
+			schachbrett[i][a] = false;
+		}
+	}
+}
+```
+Eine Funktion zum schönen Anzeigen des Brettes auf der Konsole sowie eine generische Funktion zum initalisieren (und resetten) eines zweidimensionalen boolschen Arrays.
+
+### 8.2
+```typescript
+function setzeTurm(x: number, y: number){
+	if(!schachbrett || x >= schachbrett.length || y >= schachbrett[0].length || x < 0 || y < 0) return;
+	for(let i: number = 0; i < schachbrett.length; i++){
+		for(let j: number = 0; j < schachbrett[i].length; j++){
+			if(i == x || j == y) schachbrett[i][j] = true;
+		}
+	}
+	zeigeBrett();
+}
+```
+
+### 8.3
+```typescript
+function setzePferd(x: number, y: number) {
+	if (!schachbrett || x >= schachbrett.length || y >= schachbrett[0].length || x < 0 || y < 0) return;
+	schachbrett[x][y] = true;
+	if (x + 2 < schachbrett.length && y + 1 < schachbrett[x + 2].length) {
+		schachbrett[x + 2][y + 1] = true;
+	}
+	if (x + 2 < schachbrett.length && y - 1 >= 0) {
+		schachbrett[x + 2][y - 1] = true;
+	}
+	if (x + 1 < schachbrett.length && y + 2 < schachbrett[x + 1].length) {
+		schachbrett[x + 1][y + 2] = true;
+	}
+	if (x + 1 < schachbrett.length && y - 2 >= 0) {
+		schachbrett[x + 1][y - 2] = true;
+	}
+	if (x - 2 >= 0 && y + 1 < schachbrett[x - 2].length) {
+		schachbrett[x - 2][y + 1] = true;
+	}
+	if (x - 2 >= 0 && y - 1 >= 0) {
+		schachbrett[x - 2][y - 1] = true;
+	}
+	if (x - 1 >= 0 && y + 2 < schachbrett[x - 1].length) {
+		schachbrett[x - 1][y + 2] = true;
+	}
+	if (x - 1 >= 0 && y - 2 >= 0) {
+		schachbrett[x - 1][y - 2] = true;
+	}
+	zeigeBrett();
+}
+```
+
+### 8.4
+Einfacher Backtracking Algorithmus (grauenhafte Laufzeit und auch globale Variablen sind nicht schön):
+```typescript
+//Tupel-Array zur Aufzeichnung des gegangenen Pfades. Optional.
+let coordinates: [number, number][] = [];
+
+function springerProblem(x: number, y: number, depth: number = 0): boolean {
+	//außerhalb des Feldes
+	if (!schachbrett || x >= schachbrett.length || y >= schachbrett[0].length || x < 0 || y < 0 || schachbrett[x][y] == true) return false;
+	coordinates.push([x, y]);
+	schachbrett[x][y] = true;
+	if (depth == schachbrett.length * schachbrett[0].length){
+		console.log("GELÖST! Ablauf:")
+		console.log(coordinates);
+		zeigeBrett();
+		return true;
+	}
+	let geloest: boolean = false;
+	if(!geloest) geloest = springerProblem(x + 2, y + 1, depth + 1);
+	if(!geloest) geloest = springerProblem(x + 2, y - 1, depth + 1);
+	if(!geloest) geloest = springerProblem(x + 1, y + 2, depth + 1);
+	if(!geloest) geloest = springerProblem(x + 1, y - 2, depth + 1);
+	if(!geloest) geloest = springerProblem(x - 2, y - 1, depth + 1);
+	if(!geloest) geloest = springerProblem(x - 2, y + 1, depth + 1);
+	if(!geloest) geloest = springerProblem(x - 1, y - 2, depth + 1);
+	if(!geloest) geloest = springerProblem(x - 1, y + 2, depth + 1);
+	
+	if(!geloest){
+		schachbrett[x][y] = false;
+		coordinates.pop();
+		if(depth == 0){
+			console.log("Keine Lösung gefunden");
+		}
+	}
+	return geloest;
+}
+```

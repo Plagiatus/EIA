@@ -234,9 +234,9 @@ function gesamtBeine(huehnerGesamt: number, schafeGesamt: number): number {
 	return huhnerBeine + gaenseBeine + schafeBeine + kaninchenBeine;
 }
 ```
-Ergebnisse:
-7 Hühner, 14 Gänse, 3 Schafe, 9 Kaninchen
-15 Hühner, 30 Gänse, 0 Schafe, 0 Kaninchen
+Ergebnisse:  
+7 Hühner, 14 Gänse, 3 Schafe, 9 Kaninchen  
+15 Hühner, 30 Gänse, 0 Schafe, 0 Kaninchen  
 
 Beide Ergebnisse gefunden?
 

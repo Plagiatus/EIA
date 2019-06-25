@@ -202,7 +202,7 @@ Ist der Ausdruck `((NOT a OR b) AND c) OR ((NOT b OR c) AND a)` true oder false 
 _Hinweis: Verwende boolesche Variablen und die logischen Operatoren `&&` für AND, `!` für NOT und `||` für OR._
 
 ### 3.2
-Berechne mithilfe einer while Schleife alle ganzen Zahlen von 1 bis 100 und gib das Ergebnis auf der Konsole aus.
+Zähle mithilfe einer while Schleife alle ganzen Zahlen von 1 bis 100 zusammen und gib das Ergebnis auf der Konsole aus.
 
 ### 3.3
 Berechne mithilfe einer do-while Schleife den Wert von 8! (Fakultät, 0! = 1, 1!=1, 2!=1\*2, ..., 8! = 1\*2\*3\*4\*5\*6\*7\*8) und gib das Ergebnis auf der Konsole aus.

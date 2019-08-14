@@ -106,6 +106,9 @@ console.log(5+1);
 console.log(5+'1');
 console.log('5'+1);
 console.log('5'-1);
+
+//BONUS:
+console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());
 ```
 
 Betrachte den obigen Code. Gibt es Fehler? Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme (eventuelle Fehler auskommentieren).

@@ -113,7 +113,8 @@ console.log(('b' + 'a' + + 'a' + 'a').toLowerCase());
 
 Betrachte den obigen Code. Gibt es Fehler? Was wird er auf der Konsole ausgeben und warum? Bringe ihn anschließend zum laufen und überprüfe deine Annahme (eventuelle Fehler auskommentieren).
 
-> :information_source: Bei einigen dieser Anweisungen sollte der Compiler Fehler ausgeben und euch den Code nicht übersetzen. Zum Glück, denn diese Anweisungen sind alle legitim in Javascript und führen zu den komischsten Ergebnissen. Typescript versucht uns vor solchen Dingen zu schützen.
+> :information_source: Bei einigen dieser Anweisungen sollte der Compiler Fehler ausgeben und euch den Code nicht übersetzen. Zum Glück, denn diese Anweisungen sind alle legitim in Javascript und führen zu den komischsten Ergebnissen. Typescript versucht uns vor solchen Dingen zu schützen.   
+> Wer sich eine ganze Liste mit komischem Verhalten von JS als quiz verpackt anschauen will, kann hier vorbei schauen: https://jsisweird.com/
 
 ### 2.2 Lokal vs Global
 ```typescript
